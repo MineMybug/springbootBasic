@@ -5,6 +5,7 @@ import java.io.Serializable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import com.ruanhang.springbootBasic.enums.UserSexEnum;
+import com.ruanhang.springbootBasic.param.PageParam;
 
 /** 
  * @author  阮航  
