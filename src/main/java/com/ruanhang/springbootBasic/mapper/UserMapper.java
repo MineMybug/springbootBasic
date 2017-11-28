@@ -3,7 +3,6 @@ package com.ruanhang.springbootBasic.mapper;
 import java.util.List;
 
 import com.ruanhang.springbootBasic.entity.UserEntity;
-import com.ruanhang.springbootBasic.param.UserPage;
 
 /** 
  * @author  阮航  
@@ -24,8 +23,5 @@ public interface UserMapper {
     
     UserEntity getOne(Long id);
     
-    List<UserEntity> getList(UserPage userEntity);
-    
-    int getCount(UserPage userEntity);
 }
 
