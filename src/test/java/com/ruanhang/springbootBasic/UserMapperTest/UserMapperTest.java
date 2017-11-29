@@ -31,12 +31,20 @@ public class UserMapperTest {
 //		userMapper.insertUser(new UserEntity("aa", "a123456", UserSexEnum.MAN));
 //		userMapper.insertUser(new UserEntity("bb", "b123456", UserSexEnum.WOMAN));
 //		userMapper.insertUser(new UserEntity("dd", "b123456", UserSexEnum.WOMAN));
-
+//
 //		Assert.assertEquals(2, userMapper.getAll().size());
+//		
+//		List<UserEntity> liEntities = userMapper.getAll();
+//		for(UserEntity userEntity : liEntities){
+//			System.out.println(userEntity.toString());
+//		}
 		
-		List<UserEntity> liEntities = userMapper.getAll();
-		for(UserEntity userEntity : liEntities){
-			System.out.println(userEntity.toString());
-		}
+//		UserEntity user = new UserEntity();
+//		user.setUserName("sss");
+//		user.setUserSex(UserSexEnum.WOMAN);
+//		userMapper.update(29l, user);
+		
+		UserEntity userEntity = userMapper.getOne(29l);
+		System.out.println(userEntity.toString());
 	}	
 }

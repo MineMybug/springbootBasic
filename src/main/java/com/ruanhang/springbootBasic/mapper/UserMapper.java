@@ -17,7 +17,7 @@ public interface UserMapper {
 	
 	int insert(UserEntity user);
 
-    int update(UserEntity user);
+    int update(Long id ,UserEntity user);
 
     int delete(Long id);
     
