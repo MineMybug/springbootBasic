@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisServer;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.ListOperations;
@@ -16,6 +17,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.core.ZSetOperations;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.RedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.ruanhang.springbootBasic.entity.UserEntity;
@@ -33,6 +37,15 @@ public class TestRedisTemplate {
 	
 	@Autowired
 	private RedisTemplate redisTemplate;
+	
+	@Autowired
+    public RedisTemplate redisTemplateInit() {
+        //设置序列化Key的实例化对象
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        //设置序列化Value的实例化对象
+        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+        return redisTemplate;
+    }
 	
 //	private RedisService redisService;
 	
